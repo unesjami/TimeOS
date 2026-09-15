@@ -1,97 +1,82 @@
-# ⏳ TimeOS · Smart Planner
+# TimeOS
 
-An AI-powered, zero-based time planning repository that brings intentional, automated scheduling to your daily routine. **TimeOS** transforms how teams and individuals manage their days by seamlessly turning calendar events, natural language inputs, and meeting context into action items.
+<p align="center">
+  <strong>A bilingual, browser-based planner for organizing tasks, time, and daily priorities.</strong>
+</p>
 
----
+<p align="center">
+  <a href="https://unesjami.github.io/TimeOS/"><img src="https://img.shields.io/badge/Live_Demo-Open-2563eb?style=for-the-badge" alt="Live demo"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-14b8a6?style=for-the-badge" alt="MIT license"></a>
+  <img src="https://img.shields.io/badge/Firebase-Cloud_Data-f59e0b?style=for-the-badge" alt="Firebase">
+</p>
 
-## 🚀 Key Features
+## Overview
 
-* **Zero-Based Time Planning:** Assign a specific purpose to every single hour of your day.
-* **AI Smart Auto-Scheduling:** Dynamically fits tasks around your real-time schedule and deadlines.
-* **Autonomous Meeting Assistant:** Automatically records, transcribes, and structures notes across Zoom, Teams, and Google Meet.
-* **Follow-up Agent:** Autogenerates polished summary emails and lists directly from your conversations.
-* **Two-Way Calendar Sync:** Instantly mirrors plans across Google Calendar, Apple Calendar, and Outlook.
-* **Full Offline Support:** Rest assured your data remains secure and editable completely on-device without an active internet connection.
+TimeOS is a responsive task and time-planning web application delivered from a single HTML file. It uses React in the browser, Tailwind CSS, Firebase Authentication, and Cloud Firestore. The interface supports English and Persian/Dari workflows, including Solar Hijri calendar labels.
 
----
+## Implemented features
 
-## 🛠️ Tech Stack
+- Task organization across today, upcoming, ideas, and missed states
+- Time ranges and daily planning
+- English and Persian/Dari interface support
+- Gregorian and Solar Hijri date handling
+- Light and dark themes
+- Firebase authentication and cloud data storage
+- Responsive browser interface
 
-* **Frontend:** React.js / Next.js, Tailwind CSS, TypeScript
-* **Backend:** Node.js, Express
-* **AI Layer:** OpenAI GPT APIs / LangChain
-* **Database & Auth:** PostgreSQL / Prisma, NextAuth.js
-* **Integrations:** Google Calendar API, Zoom SDK, Microsoft Graph API
+## Technology
 
----
+| Area | Implementation |
+|---|---|
+| UI | React 18 loaded from CDN |
+| Styling | Tailwind CSS and custom CSS |
+| Browser JSX | Babel Standalone |
+| Authentication | Firebase Authentication |
+| Data | Cloud Firestore |
+| Hosting | GitHub Pages |
 
-## 💻 Getting Started
+This repository does not currently use Next.js, Express, PostgreSQL, Prisma, LangChain, or a Node.js build pipeline.
 
-Follow these steps to set up the repository locally.
+## Run locally
 
-### Prerequisites
-
-Ensure you have the following installed:
-* [Node.js](https://nodejs.org) (v18 or higher)
-* [npm](https://npmjs.com) or [yarn](https://yarnpkg.com)
-* A PostgreSQL instance
-
-### Installation & Local Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com
-   cd timeos-smart-planner
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Configure environment variables:**
-   Create a `.env` file in the root directory and add your credentials:
-   ```env
-   DATABASE_URL="postgresql://user:password@localhost:5432/timeos"
-   OPENAI_API_KEY="your-openai-api-key"
-   GOOGLE_CLIENT_ID="your-google-client-id"
-   GOOGLE_CLIENT_SECRET="your-google-client-secret"
-   NEXTAUTH_SECRET="your-nextauth-secret"
-   ```
-
-4. **Run database migrations:**
-   ```bash
-   npx prisma migrate dev
-   ```
-
-5. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-   Open `http://localhost:3000` in your browser to view the application.
-
----
-
-## 🧪 Running Tests
-
-To execute the test suite, run the following command:
 ```bash
-npm run test
+git clone https://github.com/unesjami/TimeOS.git
+cd TimeOS
+python -m http.server 8080
 ```
 
----
+Open `http://localhost:8080`.
 
-## 🤝 Contributing
+## Firebase and security
 
-Contributions are welcome! Please follow these quick steps:
-1. **Fork** the project repository.
-2. **Create** your feature branch (`git checkout -b feature/AmazingFeature`).
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`).
-4. **Push** to the branch (`git push origin feature/AmazingFeature`).
-5. **Open** a Pull Request.
+The Firebase client configuration in a web application identifies the Firebase project; it is not a server secret. Access must be protected with correctly configured Authentication and Firestore Security Rules. Never rely on a client-side configuration value as an authorization boundary.
 
----
+## Project structure
 
-## 📄 License
+```text
+TimeOS/
+├── index.html
+├── README.md
+└── LICENSE
+```
 
-Distributed under the MIT License. See `LICENSE` for more information.
+## Current limitations
+
+- The application is maintained in one large HTML file.
+- There is no automated test suite or build pipeline yet.
+- Calendar, meeting-transcription, and AI-agent integrations are not included in the current repository.
+
+## Roadmap
+
+- Split UI, styles, and application logic into maintainable modules
+- Add automated tests and linting
+- Document Firestore collections and security rules
+- Add import/export and calendar integration
+
+## License
+
+Released under the [MIT License](LICENSE).
+
+## Author
+
+Created by [Unes Jami](https://github.com/unesjami).
